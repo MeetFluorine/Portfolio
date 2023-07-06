@@ -940,7 +940,33 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-  <script>
+<!-- for receiving mail -->
+
+ <script src="https://smtpjs.com/v3/smtp.js"></script>
+ <script>
+function mailus(){
+  let name= document.getElementById("name").value ;
+  let email = document.getElementById("email").value;
+  let phone = document.getElementById("phone").value;
+  let message = document.getElementById("message").value;
+  Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "meetfluorinep@gmail.com",
+    Password : "113678933AA15A4A3A2BB09D84987CBA6FC7",
+    To : 'chandangee77@gmail.com',
+    From : "meetfluorinep@gmail.com",
+    Subject : "New enquiry form",
+    Body : "Name: "+name + "<br>"+"Email: "+email+"<br>"+"Contact: "+phone+"<br>"+"Message: "+message
+}).then(
+  message => alert(message)
+);
+
+}
+
+ </script>
+
+  
+<!--   <script>
     var typeData = new Typed(".role", {
       strings: [
       //   "Full Stack Developer",
@@ -955,7 +981,7 @@
       backDelay: 1000,
     });
   </script>
-
+ -->
 </body>
 
 </html>
