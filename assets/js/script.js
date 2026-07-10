@@ -120,3 +120,84 @@ document.addEventListener("keydown", function (event){
        event.preventDefault();
     }
 });
+
+
+// ---- Load more projects ----
+const loadMoreBtn = document.querySelector(".load-more");
+
+if (loadMoreBtn) {
+  loadMoreBtn.addEventListener("click", function () {
+
+    const moreProjectsHTML = `
+      <li>
+        <a href="https://meetfluorine.github.io/AvengerGallery.github.io/" class="project-card">
+          <figure class="card-banner">
+            <img src="./assets/images/avenger.png" class="w-100" alt="A Cassette tape on a mellow apricot background.">
+          </figure>
+          <div class="card-content">
+            <h3 class="h4 card-title">Avenger-Gallery</h3>
+            <time class="publish-date" datetime="2022-04"><ion-icon name="link-outline"></ion-icon></time>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="https://meetfluorine.github.io/LandingPage/" class="project-card">
+          <figure class="card-banner">
+            <img src="./assets/images/landingPg.png" class="w-100" alt="Blue digital watch on a dark liver background.">
+          </figure>
+          <div class="card-content">
+            <h3 class="h4 card-title">landing Page</h3>
+            <time class="publish-date" datetime="2022-04"><ion-icon name="link-outline"></ion-icon></time>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="https://meetfluorine.github.io/myportfolio/" class="project-card">
+          <figure class="card-banner">
+            <img src="./assets/images/portfolio.png" class="w-100" alt="On a dark liver background, Airport luggage car carrying a luggage.">
+          </figure>
+          <div class="card-content">
+            <h3 class="h4 card-title">Portfolio Website</h3>
+            <time class="publish-date" datetime="2022-04"><ion-icon name="link-outline"></ion-icon></time>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="https://meetfluorine.github.io/ParallexWebsite.github.io/" class="project-card">
+          <figure class="card-banner">
+            <img src="./assets/images/parallex.png" class="w-100" alt="On a yellow background, a digital watch and a glass.">
+          </figure>
+          <div class="card-content">
+            <h3 class="h4 card-title">Parallex Website</h3>
+            <time class="publish-date" datetime="2022-04"><ion-icon name="link-outline"></ion-icon></time>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="https://meetfluorine.github.io/WordCounter/" class="project-card">
+          <figure class="card-banner">
+            <img src="./assets/images/wordcounter.png" class="w-100" alt="A fujifilm instant camera on a dark electric blue background.">
+          </figure>
+          <div class="card-content">
+            <h3 class="h4 card-title">Word Counter</h3>
+            <time class="publish-date" datetime="2022-04"><ion-icon name="link-outline"></ion-icon></time>
+          </div>
+        </a>
+      </li>
+    `;
+
+    // Get the <li> that wraps the button, and the <ul> it lives in
+    const btnListItem = loadMoreBtn.closest("li");
+    const projectList = btnListItem.parentElement;
+
+    // Insert the new cards right before the "Load more" <li>
+    btnListItem.insertAdjacentHTML("beforebegin", moreProjectsHTML);
+
+    // Remove the button (or swap to a "no more projects" message instead)
+    btnListItem.remove();
+  });
+}
